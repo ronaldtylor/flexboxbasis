@@ -1,0 +1,122 @@
+/* 
+////// For this challenge ///////
+
+- You will have to modify the HTML
+
+- You can add new classes in the HTML
+  if you need to
+
+// Requirements
+1. The headings in the first row must be
+   a different color
+2. The two .col at the bottom must go next
+   to one another
+3. The section at the bottom should have
+   a dark background color and a different
+   color of text
+4. I've removed the "gap" that I created,
+   so you'll have to add it back in
+
+   */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+.container {
+  /* width 80% set krdi taaki 
+    ab yeh apne parent ka 80% hai and mobile par chota kroge tb bhi 80% rhyga
+    responsive*/
+  width: 80%;
+  /* max-width:  1100px lagadi ki taaki yeh jab hum badhi kren screen
+toh 1100px se bdhi na ho; */
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.row {
+  /* display: flex => flex container */
+  display: flex;
+
+  /* can't use yet */
+  text-align: center;
+  /* cols ke beech mai gap dene k liye gap 100px 
+   but yeh abi tk srf firefox mai chalta hai*/
+  /* isiliye humne neeche .col + .col use karlia hai */
+  /* gap: 100px; */
+}
+
+.col + .col {
+  margin-left: 30px;
+}
+
+.container .row h2 {
+  color: #87629a;
+}
+
+.col {
+  /* these are now flex items */
+  /* yeh div hain. and div ki original width default width 100% hoti hai
+but hum jab display flex kr dete hain toh woh shrink hojata hai 
+woh koshish krta hai jitna shrink ho saku hojau 
+jitna content kam hoga utna shrink hoga
+isiliye width 100% lagane se ideal size hogya 100%  */
+  width: 100%;
+}
+
+.hero {
+  padding: 100px 0;
+  background-color: #23424a;
+  color: #fff;
+}
+
+.hero__text {
+  /* yahan humne hero text ko 60% kardia
+    container 80% hai hero 60%
+    container mai 40% ka aur kch daal skte hain like image etc etc */
+  width: 60%;
+}
+
+.hero p {
+  margin-bottom: 3em;
+}
+
+.two-col {
+  background-color: #136c72;
+  padding: 4rem 1rem;
+  color: #fff;
+  text-align: center;
+}
+
+#three-cols {
+  padding: 4rem 1rem;
+}
+.btn {
+  /* display inline block karne se margin and padding top bottom mai apply hoajyegi
+    and yeh ek line mai bhi ajeyag */
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #23424a;
+  font-weight: 900;
+  background-color: #38cfd9;
+  padding: 0.75em 2em;
+  border-radius: 100px;
+}
+
+.btn:hover,
+.btn:focus {
+  opacity: 0.75;
+}
